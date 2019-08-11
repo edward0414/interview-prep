@@ -137,9 +137,41 @@ def advance_by_offset(arr):
 
 	return [] 
 
-# 5.5
+# 5.5 Delete Duplicates From a Sorted Array
+#
+# Delete duplicates
+def delete_duplicates(arr):
+	"""
+	arr: List[Int]
+	rtype: List[Int]
+	"""
+	n = len(arr)
+	write = 1
 
-# 5.6
+	for i in range(1, n):
+		if arr[i] != arr[write -1]:
+			arr[write] = arr[i]
+			write += 1
+
+	return arr[:write]
+
+# 5.6 Buy and Sell a Stock Once
+#
+#
+def buy_and_sell_stock_once(arr):
+	"""
+	arr: List[Int]
+	rtype: Int
+	"""
+	max_profit, smallest = 0, float('inf')
+
+	for num in arr:
+		if num < smallest:
+			smallest = num
+		else:
+			max_profit = max(max_profit, num - smallest)
+
+	return max_profit
 
 
 def run(num):
@@ -206,6 +238,56 @@ def run(num):
 			return "Question 5.3 correct!"  
 		else: 
 			return "Question 5.3 incorrect" 
+
+	elif num == "4":
+		arr1 = [3,2,0,0,2,0,1]
+		expected1 = False
+		res1 = advance_by_offset(arr1) == expected1
+
+		arr2 = [3,2,1,0,2,0,1]
+		expected2 = True
+		res2 = advance_by_offset(arr2) == expected2
+
+		if res1 and res2:
+			return "Question 5.4 correct!"  
+		else: 
+			return "Question 5.4 incorrect" 
+
+	elif num == "5":
+		arr = [1,2,2,3,4,4,5,6]
+		expected = [1,2,3,4,5,6]
+
+		res = delete_duplicates(arr) == expected
+
+		if res:
+			return "Question 5.5 correct!"  
+		else: 
+			return "Question 5.5 incorrect" 
+
+	elif num == "6":
+		arr1 = [5,1,2,3,6,2,12]
+		expected1 = 11
+		res1 = buy_and_sell_stock_once(arr1) == expected1
+
+		arr2 = [310, 315, 275, 295, 260, 270, 290, 230, 255, 250]
+		expected2 = 30
+		res2 = buy_and_sell_stock_once(arr2) == expected2
+
+		if res1 and res2:
+			return "Question 5.6 correct!"  
+		else: 
+			return "Question 5.6 incorrect" 
+
+	elif num == "7":
+		arr = []
+		expected = 0
+		res = False
+
+		if res:
+			return "Question 5.7 correct!"  
+		else: 
+			return "Question 5.7 incorrect" 
+
 
 	return "Not a valid question"
 
