@@ -33,6 +33,7 @@ def even_odd_array(arr):
 # Partition about a selected pivot
 def dutch_flag_partition(pivot_ind, arr):
 	"""
+	pivot_ind: Int
 	arr: List[Int]
 	rtype: List[Int]
 	"""
@@ -90,11 +91,39 @@ def plus_one(arr):
 # Multiply two numbers given in arrays
 def multiply(num1, num2):
 	"""
-	arr: List[Int]
+	num1: List[Int]
+	num2: List[Int]
 	rtype: List[Int]
 	"""
+	n = len(num1)
+	m = len(num2)
 
-	return []
+	isPos = (num1[0] < 0) == (num2[0] < 0)
+
+	num1[0], num2[0] = abs(num1[0]), abs(num2[0])
+
+	res = [0] * (n+m)
+
+	for i in reversed(range(n)):
+		for j in reversed(range(m)):
+			res[i+j+1] += num1[i] * num2[j]
+			res[i+j] += res[i+j+1] / 10
+			res[i+j+1] %= 10
+
+	for i in range(len(res)):
+		if res[i] == 0:
+			res = res[i+1:]
+		elif i == len(res) -1:
+			res = [0]
+		else:
+			break
+
+	if not isPos:
+		res[0] *= -1
+
+	return res
+
+
 
 # 5.4 Advancing Through an Array
 #
@@ -159,8 +188,24 @@ def run(num):
 			return "Question 5.2 incorrect" 
 
 	elif num == "3":
+		num1 = [1,9,3,7,0,7,7,2,1]
+		num2 = [-7,6,1,8,3,8,2,5,7,2,8,7]
 
-		return "3"
+		expected1 = [-1,4,7,5,7,3,9,5,2,5,8,9,6,7,6,4,1,2,9,2,7]
+
+		res1 = multiply(num1, num2) == expected1
+
+		num3 = [2,5]
+		num4 = [2,5]
+
+		expected2 = [6,2,5]
+
+		res2 = multiply(num3, num4) == expected2
+
+		if res1 and res2:
+			return "Question 5.3 correct!"  
+		else: 
+			return "Question 5.3 incorrect" 
 
 	return "Not a valid question"
 
