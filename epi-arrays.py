@@ -2,7 +2,7 @@ import sys
 
 # Elements of Programming Interviews in Python
 #
-# Chapter 5: Strings
+# Chapter 5: Arrays
 
 # warmup
 #
