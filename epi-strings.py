@@ -24,33 +24,44 @@ def is_palindromic(string):
 
 	return True
 
-# 6.1
+# 6.1 String to Integer/ Integer to String
 #
+# Write an interconvertor 
+def int_to_string(integer):
+	"""
+	integer: int
+	rtype: string
+	"""
+	return ""
 
+def string_to_int(string):
+	"""
+	string: string
+	rtype: integer
+	"""
+	return 0
 
-# 6.2 
+# 6.2 Base Conversion
 #
+# 
+def convert_base(string, b1, b2):
+	"""
+	string: string
+	b1: int
+	b2: b2
+	rtype: string
+	"""
+	return ""
 
-
-# 6.3
+# 6.3 Alphabet Encoding
 #
-
-
-
-# 6.4
-#
-
-
-# 6.5 
-#
-
-
-# 6.6 
-#
-
-
-# 6.9 
-#
+# "A" = 1, "D" = 4, "AA" = 27, "ZZ" = 702
+def alphabet_encoding(string):
+	"""
+	string: str
+	rtype: int
+	"""
+	return 0
 
 
 
@@ -74,18 +85,6 @@ def run(num):
 
 	elif num == "3":
 		return "3"
-
-	elif num == "4":
-		return "4" 
-
-	elif num == "5":
-		return "5"
-
-	elif num == "6":
-		return "6"
-
-	elif num == "9":
-		return "9"
 
 
 	return "Not a valid question"
