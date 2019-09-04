@@ -9,5 +9,6 @@
     "120",
     "--experimental"
   ],
-  "python.linting.enabled": true
+  "python.linting.enabled": true,
+  "trailing-spaces.trimOnSave": true
 }

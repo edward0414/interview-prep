@@ -15,7 +15,7 @@ def is_palindromic(string):
     rtype: bool
     """
     n = len(string)
-    L, R = 0, n-1
+    L, R = 0, n - 1
 
     while L < R:
         if string[L] != string[R]:
