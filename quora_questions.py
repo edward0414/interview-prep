@@ -3,18 +3,24 @@ import sys
 # quora question link: https://www.quora.com/Computer-science-is-not-teaching-me-programming-it-is-teaching-me-maths-What-can-I-do-to-use-my-coding-knowledge-to-program-apps-etc-Any-suggestions-on-how-to-teach-myself-to-program-Any-useful-websites-videos-etc/answer/Gayle-Laakmann-McDowell
 
 # Question 3
+
+
 def hello(name):
     print("hello " + name)
 
 # Question 4
+
+
 def isPrime(num):
     num = int(num)
-    for i in range(2, int(num**0.5)+1 ):
+    for i in range(2, int(num**0.5)+1):
         if num % i == 0:
             return False
     return True
 
 # Question 5
+
+
 def allPrimes(num):
     num = int(num)
     primes = [2]
@@ -23,36 +29,40 @@ def allPrimes(num):
     if num < 3:
         return primes
 
-    for i in range(3, num+1):
+    for i in range(3, num + 1):
         if isPrime(i):
             primes.append(i)
 
     return primes
 
 # Question 6
+
+
 def sieveOfEratosthenes(num):
     num = int(num)
     if num < 2:
         return "no valid prime in the range"
 
-    lst = [True] * num #careful about the indices
+    lst = [True] * num  # careful about the indices
     lst[0] = False
 
     for i in range(2, int(num**0.5) + 1):
         if lst[i-1]:
             temp = i**2
             while temp <= num:
-                lst[temp-1] = False
-                temp += i 
-    
+                lst[temp - 1] = False
+                temp += i
+
     result = []
     for i in range(num):
         if lst[i]:
             result.append(i+1)
-    
+
     return result
 
 # Question 7
+
+
 def primeFact(num):
     num = int(num)
     if num < 2:
@@ -73,6 +83,8 @@ def primeFact(num):
     return res
 
 # Question 8
+
+
 class Person:
     lst = []
 
@@ -92,7 +104,7 @@ class Person:
     def sortByComparator(cls):
         def comparator(ele1, ele2):
             return ele2[1] - ele1[1]
-        
+
         cls.lst.sort(cmp=comparator)
         return cls.lst
 
@@ -116,7 +128,7 @@ def run(num, args):
         robbie = Person("Robbie", 23)
 
         return Person.sort()
-    
+
     elif num == "9":
         edward = Person("Edward", 21)
         jocelyn = Person("Jocelyn", 24)
@@ -125,7 +137,7 @@ def run(num, args):
         robbie = Person("Robbie", 23)
 
         return Person.sortByComparator()
-    
+
     return "Not a valid question"
 
 

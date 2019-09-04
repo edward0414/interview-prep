@@ -7,6 +7,8 @@ import sys
 # warmup
 #
 # reorder the array's entries so that the even entries appear first
+
+
 def even_odd_array(arr):
 	"""
 	arr: List[Int]
@@ -14,7 +16,7 @@ def even_odd_array(arr):
 	"""
 	n = len(arr)
 
-	even, odd = 0, n -1
+	even, odd = 0, n - 1
 
 	while even < odd:
 		num = arr[even]
@@ -31,6 +33,8 @@ def even_odd_array(arr):
 # 5.1 The Dutch National Flag Problem
 #
 # Partition about a selected pivot
+
+
 def dutch_flag_partition(pivot_ind, arr):
 	"""
 	pivot_ind: Int
@@ -52,7 +56,7 @@ def dutch_flag_partition(pivot_ind, arr):
 		elif num == piv:
 			equal += 1
 
-		else: #less than piv
+		else:  #less than piv
 			arr[equal], arr[less] = arr[less], arr[equal]
 			equal += 1
 			less += 1
@@ -62,6 +66,8 @@ def dutch_flag_partition(pivot_ind, arr):
 # 5.2 Increment an Arbitrary-Precision Integer
 #
 # D + 1, return in array
+
+
 def plus_one(arr):
 	"""
 	arr: List[Int]
@@ -89,6 +95,8 @@ def plus_one(arr):
 # 5.3 Multiply Two Arbitrary-Precision Integers
 #
 # Multiply two numbers given in arrays
+
+
 def multiply(num1, num2):
 	"""
 	num1: List[Int]
@@ -135,11 +143,13 @@ def advance_by_offset(arr):
 	rtype: List[Int]
 	"""
 
-	return [] 
+	return []
 
 # 5.5 Delete Duplicates From a Sorted Array
 #
 # Delete duplicates
+
+
 def delete_duplicates(arr):
 	"""
 	arr: List[Int]
